@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ClassScheduler">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Scheduler Home Page</title>
+
+    <!-- Stylesheets -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/textAngular.css" rel="stylesheet">-->
+    <link href="css/style.css" rel="stylesheet"/>
+
+    <!-- JS -->
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+    <!--<script src="js/textAngular-rangy.min.js"></script>
+    <script src="js/textAngular-sanitize.min.js"></script>
+    <script src="js/textAngular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>-->
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <!-- controllers -->
+    <script src="views/user/controllers/login.controller.client.js"></script>
+    <script src="views/user/controllers/register.controller.client.js"></script>
+    <script src="views/user/controllers/profile.controller.client.js"></script>
+    <script src="views/user/controllers/user-list.controller.client.js"></script>
+    <script src="views/user/controllers/admin-profile.controller.client.js"></script>
+
+    <script src="views/course/controllers/course-details.controller.client.js"></script>
+    <script src="views/course/controllers/course-edit.controller.client.js"></script>
+    <script src="views/course/controllers/course-list.controller.client.js"></script>
+    <script src="views/course/controllers/course-new.controller.client.js"></script>
+
+    <!-- services -->
+    <script src="services/user.service.client.js"></script>
+    <script src="services/course.service.client.js"></script>
+
+    <!-- directives -->
+    <!--<script src="directives/wam.directives.js"></script>-->
+</head>
+<body>
+    <div ng-view></div>
+</body>
+</html>

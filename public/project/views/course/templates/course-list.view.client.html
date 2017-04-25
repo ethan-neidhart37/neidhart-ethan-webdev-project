@@ -1,0 +1,52 @@
+<nav class="navbar navbar-primary navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right" ng-show="model.create">
+            <a class="navbar-link" href="#/user/{{model.userId}}/course/new">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+        <div class="navbar-text pull-left">
+            <a class="navbar-link" href="#/user/{{model.userId}}/">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div ng-repeat="course in model.courses"  class="container-fluid">
+        <h4>
+            <a href="#/user/{{model.userId}}/course/{{course._id}}">{{course.name}}</a>
+            <a href="#/user/{{model.userId}}/course/{{course._id}}/edit"
+               class="pull-right" ng-show="course.modify"><span class="glyphicon glyphicon-cog"></span></a>
+            <span ng-switch="course.participation">
+                <span ng-switch-when="TAKE">
+                    <a class="btn btn-primary" ng-click="model.enroll(model.userId, course._id)">Enroll</a>
+                </span>
+                <span ng-switch-when="TEACH">
+                    <a class="btn btn-primary" ng-click="model.teach(model.userId, course._id)">Teach Course</a>
+                </span>
+                <span ng-switch-when="DROP">
+                    <a class="btn btn-danger" ng-click="model.quit(model.userId, course._id)">Drop Course</a>
+                </span>
+                <span ng-switch-when="CANCEL">
+                    <a class="btn btn-danger" ng-click="model.cancl(model.userId, course._id)">Stop Teaching Course</a>
+                </span>
+            </span>
+        </h4>
+    </div>
+</div>
+
+<nav class="navbar navbar-primary navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a class="navbar-link" href="#/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </div>
+    </div>
+</nav>

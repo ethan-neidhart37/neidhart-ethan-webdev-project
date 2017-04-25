@@ -1,0 +1,36 @@
+<nav class="navbar navbar-primary navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a class="navbar-link" href="#/user/{{model.userId}}/new">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+        <div class="navbar-text pull-left">
+            <a class="navbar-link" href="#/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand">Users</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div ng-repeat="user in model.users" class="container-fluid">
+        <h4>
+            <a href="#/user/{{model.userId}}/user2/{{user._id}}">{{user.firstName}} {{user.lastName}}</a>
+        </h4>
+    </div>
+</div>
+
+<nav class="navbar navbar-primary navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a class="navbar-link" href="#/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </div>
+    </div>
+</nav>

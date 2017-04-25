@@ -1,0 +1,77 @@
+<nav class="navbar navbar-primary navbar-fixed-top">
+    <div class="row container-fluid">
+        <div class="col-sm-4 hidden-xs">
+            <div class="navbar-text pull-left">
+                <a class="navbar-link" href="#/user/{{model.userId}}/course">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="navbar-text pull-right" ng-show="model.create">
+                <a class="navbar-link" href="#/user/{{model.userId}}/course/new">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/user/{{model.userId}}/course">Courses</a>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="navbar-text pull-left visible-xs">
+                <a class="navbar-link" href="#/user/{{model.userId}}/course">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="navbar-text pull-right">
+                <a class="navbar-link" ng-click="model.createCourse(course)">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand">New Course</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="row container-fluid">
+    <div class="col-sm-4 hidden-xs">
+        <div ng-repeat="course in model.courses" class="container-fluid">
+            <h4>
+                <a href="#/user/{{model.userId}}/course/{{course._id}}">{{course.name}}</a>
+                <a href="#/user/{{model.userId}}/course/{{course._id}}/edit"
+                   class="pull-right" ng-show="course.modify"><span class="glyphicon glyphicon-cog"></span></a>
+                <span ng-switch="course.participation">
+                    <span ng-switch-when="TEACH">
+                        <a class="btn btn-primary" ng-click="model.teach(model.userId, course._id)">Teach Course</a>
+                    </span>
+                    <span ng-switch-when="CANCEL">
+                        <a class="btn btn-danger" ng-click="model.cancl(model.userId, course._id)">Stop Teaching Course</a>
+                    </span>
+                </span>
+            </h4>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input ng-model="course.name" type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea ng-model="course.description" class="form-control" rows="5" id="description" placeholder="Description"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+
+<nav class="navbar navbar-primary navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a class="navbar-link" href="#/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </div>
+    </div>
+</nav>
