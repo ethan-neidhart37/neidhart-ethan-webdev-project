@@ -1,14 +1,14 @@
 (function() {
     angular
         .module("ClassScheduler")
-        .controller("ProjectLoginController", ProjectLoginController);
+        .controller("LoginController", LoginController);
 
-        function ProjectLoginController(ProjectUserService, $location) {
+        function LoginController(UserService, $location) {
             var vm = this;
             vm.login = login;
 
             function login(user) {
-                var promise = ProjectUserService.findUserByCredentials(user.username, user.password);
+                var promise = UserService.findUserByCredentials(user.username, user.password);
                 promise
                     .success(function (foundUser) {
                         var loginUser = foundUser;
